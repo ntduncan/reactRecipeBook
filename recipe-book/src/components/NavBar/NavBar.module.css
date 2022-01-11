@@ -1,0 +1,51 @@
+.navBar {
+    color: #fff;
+    margin: 1em;
+    padding-left: 1.5em;
+    padding-right: 15px;
+    border-radius: 15px; 
+    list-style: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.logo {
+    display: inline-block;
+    left: 1em;
+}
+
+.navItem {
+    min-width: 150px;
+    font-weight: bold;
+    width: auto;
+    position: relative;
+    box-sizing: border-box;
+    float: right;
+    padding: 25px;
+    position: relative;
+    transition: all 0.25s ease-in;
+    text-align: center;
+}
+
+.navItem:hover {
+    font-size: 1.2em;
+}
+
+.primaryTheme {
+    background:  #99B898;
+}
+
+.themeOne {
+    background: #FECEAB;
+}
+
+.themeTwo {
+    background: #FF847C;
+}
+
+.themeThree {
+    background: #E84A5F;
+}
+
+.themeFour {
+    background: #2A363B;
+}
