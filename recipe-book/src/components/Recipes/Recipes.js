@@ -1,4 +1,4 @@
-import './Recipes.css';
+import styles from './Recipes.module.css';
 import RecipeItem from './RecipeItem';
 
 const Recipes = ({recipes}) => {
@@ -10,8 +10,7 @@ const Recipes = ({recipes}) => {
     }
 
     return (
-        <div>
-            Recipes Component.
+        <div className={styles.recipes}>
             {recipes.map(
                 recipe => {
                     return createRecipeItem(recipe);
