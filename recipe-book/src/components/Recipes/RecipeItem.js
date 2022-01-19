@@ -7,9 +7,6 @@ const RecipeItem = ({ recipe }) => {
 		<div className="column recipeItem">
 			{/* <div className="demo-title">Normal</div> */}
 			<div className="post-module">
-				<div className="thumbnail">
-					<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg" />
-				</div>
 				<div className="post-content">
 					<div className="category">
 						{recipe.meal_type.map((type) => {
