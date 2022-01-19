@@ -11,15 +11,22 @@ const RecipeItem = ({ recipe }) => {
 					<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg" />
 				</div>
 				<div className="post-content">
-					<div className="category">Photos</div>
-					<h1 className="title">City Lights in New York</h1>
-					<h2 className="sub_title">The city that never sleeps.</h2>
+					<div className="category">
+						{recipe.meal_type.map((type) => {
+							return type + " ";
+						})}
+					</div>
+					<h1 className="title">{recipe.title}</h1>
+					<h2 className="sub_title">Servings: {recipe.servings}</h2>
+					<h3>Instructions: </h3>
+					<p className="description">{recipe.instructions}</p>
+					<h3>Ingredients: </h3>
 					<p className="description">
-						New York, the largest city in the U.S., is an architectural marvel
-						with plenty of historic monuments, magnificent buildings and
-						countless dazzling skyscrapers.
+						{recipe.ingredients.map((ingredient) => {
+							return ingredient + ", ";
+						})}
 					</p>
-					<div className="post-meta">
+					{/* <div className="post-meta">
 						<span className="timestamp">
 							<i className="fa fa-clock-">o</i> 6 mins ago
 						</span>
@@ -27,7 +34,7 @@ const RecipeItem = ({ recipe }) => {
 							<i className="fa fa-comments"></i>
 							<a href="#"> 39 comments</a>
 						</span>
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</div>
