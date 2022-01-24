@@ -1,4 +1,5 @@
 import "./Modal.css";
+import { FaWindowClose } from "react-icons/fa";
 
 const Modal = ({ show, close, children }) => {
 	return (
@@ -7,14 +8,13 @@ const Modal = ({ show, close, children }) => {
 				<div className="modalContainer" onClick={() => close()}>
 					<div className="modal" onClick={(e) => e.stopPropagation()}>
 						<header className="modal_header">
-							<h2 className="modal_header-title">Modal Title</h2>
+							<button className="modal-close" onClick={() => close()}>
+								<FaWindowClose size={42}/>
+							</button>
+							{/* <h2 className="modal_header-title"></h2> */}
 						</header>
 						<main className="modal_content">{children}</main>
-						<footer className="modal_footer">
-							<button className="modal-close" onClick={() => close()}>
-								close
-							</button>
-						</footer>
+						<footer className="modal_footer"></footer>
 					</div>
 				</div>
 			) : null}

@@ -48,11 +48,14 @@
 	padding: 2rem 0;
 	padding-bottom: 0;
 }
-.modalContainer .modal_footer button {
+.modalContainer .modal_header button {
 	float: right;
 	padding: 0.5rem;
-	border-radius: 8px;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
 }
+
 .modalContainer .modal_footer .modal-close {
 	background-color: transparent;
 	font-weight: 600;
