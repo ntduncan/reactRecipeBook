@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar/NavBar";
 import Recipes from "./components/Recipes/Recipes";
 import Modal from "./components/Modal/Modal";
 import { useState } from "react";
+import RecipeDetail from './components/Recipes/RecipeDetail';
 
 const recipes = [
 	{
@@ -84,15 +85,18 @@ const recipes = [
 function App() {
 
 	const [modal, setModal] = useState(false);
+	const [recipe, setRecipe] = useState('');
 	const Toggle = () => setModal(!modal);
 
 	return (
 		<div>
 			<button className="clickme" onClick={() => Toggle()}>My Modal Popup</button>
-			<Modal show={modal} title="My Modal" close={Toggle}/>
-
 			<NavBar />
-			<Recipes recipes={recipes} show={modal}></Recipes>
+			<Modal show={modal} title="My Modal" close={Toggle}>
+				<RecipeDetail recipe={recipe} />
+			</Modal>
+
+			<Recipes recipes={recipes} show={modal} setRecipe={setRecipe} setModal={setModal}></Recipes>
 		</div>
 	);
 }

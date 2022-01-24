@@ -42,7 +42,7 @@
 }
 .modalContainer .modal_content {
 	border-bottom: 1px solid #dddddd;
-	padding: 2rem 0;
+	/* padding: 2rem 0; */
 }
 .modalContainer .modal_footer {
 	padding: 2rem 0;

@@ -1,9 +1,9 @@
 import styles from "./Recipes.module.css";
 import RecipeItem from "./RecipeItem";
 
-const Recipes = ({ recipes, show }) => {
+const Recipes = ({ recipes, show, setRecipe, setModal }) => {
 	const createRecipeItem = (recipe) => {
-		return <RecipeItem recipe={recipe} key={recipe.id}></RecipeItem>;
+		return <RecipeItem recipe={recipe} key={recipe.id} setRecipe={setRecipe} setModal={setModal}></RecipeItem>;
 	};
 
 	return (

@@ -1,10 +1,10 @@
 import "./RecipeItem.css";
 
-const RecipeItem = ({ recipe }) => {
+const RecipeItem = ({ recipe, setRecipe, setModal }) => {
 	console.log(recipe);
 
 	return (
-		<div className="column recipeItem">
+		<div className="column recipeItem" onClick={() => {setRecipe(recipe); setModal(true)}}>
 			{/* <div className="demo-title">Normal</div> */}
 			<div className="post-module">
 				<div className="post-content">
