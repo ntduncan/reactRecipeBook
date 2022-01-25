@@ -4,6 +4,8 @@ import Recipes from "./components/Recipes/Recipes";
 import Modal from "./components/Modal/Modal";
 import { useState } from "react";
 import RecipeDetail from './components/Recipes/RecipeDetail';
+import NewRecipeModal from "./components/Modal/NewRecipeModal";
+import RecipeForm from "./components/NewRecipe/RecipeForm";
 
 const recipes = [
 	{
@@ -89,13 +91,20 @@ function App() {
 	const [navSelection, setNavSelection] = useState("Recipe Book");
 	const Toggle = () => setModal(!modal);
 
+	const [newRecipeModal, setNewRecipeModal] = useState(false);
+	const ToggleRecipeModal = () => setNewRecipeModal(!newRecipeModal);
+
 	return (
 		<div>
 			<button className="clickme" onClick={() => Toggle()}>My Modal Popup</button>
-			<NavBar setNavSelection={setNavSelection} navSelection={navSelection}/>
+			<NavBar setNavSelection={setNavSelection} navSelection={navSelection} setNewRecipeModal={setNewRecipeModal} toggleModal={ToggleRecipeModal}/>
 			<Modal show={modal} title="My Modal" close={Toggle}>
 				<RecipeDetail recipe={recipe} />
 			</Modal>
+
+			<NewRecipeModal show={newRecipeModal} close={ToggleRecipeModal}>
+				<RecipeForm></RecipeForm>
+			</NewRecipeModal>
 
 			<Recipes recipes={recipes} show={modal} setRecipe={setRecipe} setModal={setModal} typeFilter={navSelection.toLowerCase()}></Recipes>
 		</div>
