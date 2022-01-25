@@ -1,15 +1,26 @@
-.new-recipe__controls input[type=text] {
-    width: 100%;
-    border-radius: 10px;
-    height: 25px;
+.new-recipe__controls input[type="text"] {
+	width: 100%;
+	border-radius: 10px;
+	height: 25px;
 }
 
 .new-recipe__controls textarea {
-    width: 100%;
-    border-radius: 10px;
-    height: 60px;
+	width: 100%;
+	border-radius: 10px;
+	height: 60px;
 }
 
 .new-recipe__control {
-    margin: 6px;
+	margin: 6px;
+}
+
+.new-recipe__actions button {
+	float: right;
+	padding: 0.5rem;
+	border-radius: 8px;
+    border: none;
+    margin: 0.5rem;
+    color: white;
+    background-color: #99B898;
+    height: 40px;
 }

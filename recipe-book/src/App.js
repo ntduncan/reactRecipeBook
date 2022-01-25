@@ -124,7 +124,7 @@ function App() {
 			</Modal>
 
 			<NewRecipeModal show={newRecipeModal} close={ToggleRecipeModal}>
-				<RecipeForm onSaveNewRecipeData={saveNewRecipeDataHandler}></RecipeForm>
+				<RecipeForm onSaveNewRecipeData={saveNewRecipeDataHandler} closeModal={ToggleRecipeModal} setNavSelection={setNavSelection}></RecipeForm>
 			</NewRecipeModal>
 
 			<Recipes recipes={recipes} show={modal} setRecipe={setRecipe} setModal={setModal} typeFilter={navSelection.toLowerCase()}></Recipes>

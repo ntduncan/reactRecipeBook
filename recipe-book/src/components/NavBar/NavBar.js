@@ -10,7 +10,7 @@ export default function NavBar({setNavSelection, navSelection, setNewRecipeModal
         <nav>
             <ul className={cx(navTheme, styles.navBar)}>
                 <h2 className={styles.logo}>{navSelection}</h2>
-                <li className={styles.navItem} onClick={() => {setNavSelection("Add Recipe"); setNavTheme(styles.themeTwo); setNewRecipeModal(true)}}>Add Recipe</li>
+                <li className={styles.navItem} onClick={() => {setNavSelection("Add Recipe"); setNavTheme(styles.primaryTheme); setNewRecipeModal(true)}}>Add Recipe</li>
                 <li className={styles.navItem} onClick={() => {setNavSelection("Dessert"); setNavTheme(styles.themeFour)}}>Dessert</li>
                 <li className={styles.navItem} onClick={() => {setNavSelection("Dinner"); setNavTheme(styles.themeThree)}}>Dinner</li>
                 <li className={styles.navItem} onClick={() => {setNavSelection("Lunch"); setNavTheme(styles.themeTwo)}}>Lunch</li>

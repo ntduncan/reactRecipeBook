@@ -12,12 +12,12 @@ const NewRecipeModal = ({ show, close, children }) => {
 							<h2 className="modal_header-title">Add Your Recipe Here!</h2>
 						</header>
 						<main className="modal_content">{children}</main>
-						<footer className="modal_footer">
+						{/* <footer className="modal_footer">
 							<button className="modal-close" onClick={() => close()}>
 								Cancel
 							</button>
-							{/* <button className="submit">Submit</button> */}
-						</footer>
+							<button className="submit">Submit</button>
+						</footer> */}
 					</div>
 				</div>
 			) : null}
