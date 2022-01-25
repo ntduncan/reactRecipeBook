@@ -1,7 +1,6 @@
 import "./RecipeItem.css";
 
 const RecipeItem = ({ recipe, setRecipe, setModal }) => {
-	// console.log(recipe);
 
 	return (
 		<div className="column recipeItem" onClick={() => {setRecipe(recipe); setModal(true)}}>

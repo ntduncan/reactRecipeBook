@@ -3,7 +3,6 @@ import "./NewRecipeModal.css";
 
 const NewRecipeModal = ({ show, close, children }) => {
 	
-
 	return (
 		<>
 			{show ? (
@@ -17,7 +16,6 @@ const NewRecipeModal = ({ show, close, children }) => {
 							<button className="modal-close" onClick={() => close()}>
 								Cancel
 							</button>
-
 							{/* <button className="submit">Submit</button> */}
 						</footer>
 					</div>

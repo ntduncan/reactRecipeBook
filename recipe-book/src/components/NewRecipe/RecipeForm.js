@@ -27,7 +27,6 @@ const RecipeForm = (props) => {
     const [selectedMealType, setSelectedMealType] = useState("");
 	const mealTypeChangeHandler = (event) => {
         allSelectedMealTypes.push(event.target.value);
-		// setSelectedMealType(allSelectedMealTypes);
 	};
 
 	const submitHandler = (event) => {
@@ -42,8 +41,6 @@ const RecipeForm = (props) => {
             instructions: enteredInstructions,
             meal_type: allSelectedMealTypes,
 		};
-
-        // console.log(recipeData);
 
 		// we need to pass this up to parent
 		props.onSaveNewRecipeData(recipeData);
@@ -90,7 +87,7 @@ const RecipeForm = (props) => {
 						onChange={instructionsChangeHandler}
 					/>
 				</div>
-                {/* meal type will be a checkbox */}
+                {/* meal type is a checkbox */}
                 <div className="new-recipe__control">
 					<label>Meal Type</label><br/>
 					<input

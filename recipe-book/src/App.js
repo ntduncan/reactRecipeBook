@@ -7,6 +7,7 @@ import RecipeDetail from './components/Recipes/RecipeDetail';
 import NewRecipeModal from "./components/Modal/NewRecipeModal";
 import RecipeForm from "./components/NewRecipe/RecipeForm";
 
+// dummy data
 const recipes = [
 	{
 		id: 1,
@@ -117,7 +118,6 @@ function App() {
 
 	return (
 		<div>
-			<button className="clickme" onClick={() => Toggle()}>My Modal Popup</button>
 			<NavBar setNavSelection={setNavSelection} navSelection={navSelection} setNewRecipeModal={setNewRecipeModal} toggleModal={ToggleRecipeModal}/>
 			<Modal show={modal} title="My Modal" close={Toggle}>
 				<RecipeDetail recipe={recipe} />
