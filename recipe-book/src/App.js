@@ -63,7 +63,7 @@ const recipes = [
 		],
 		instructions:
 			"Bring a large pot of water to a boil and season generously with salt. Add the pasta to the water once boiling and cook until al dente. Reserve 2 cups of cooking water and drain the pasta. ",
-		meal_type: ["lunch", "dinner"],
+		meal_type: ["lunch"],
 	},
 	{
 		id: 5,
@@ -86,17 +86,18 @@ function App() {
 
 	const [modal, setModal] = useState(false);
 	const [recipe, setRecipe] = useState('');
+	const [navSelection, setNavSelection] = useState("Recipe Book");
 	const Toggle = () => setModal(!modal);
 
 	return (
 		<div>
 			<button className="clickme" onClick={() => Toggle()}>My Modal Popup</button>
-			<NavBar />
+			<NavBar setNavSelection={setNavSelection} navSelection={navSelection}/>
 			<Modal show={modal} title="My Modal" close={Toggle}>
 				<RecipeDetail recipe={recipe} />
 			</Modal>
 
-			<Recipes recipes={recipes} show={modal} setRecipe={setRecipe} setModal={setModal}></Recipes>
+			<Recipes recipes={recipes} show={modal} setRecipe={setRecipe} setModal={setModal} typeFilter={navSelection.toLowerCase()}></Recipes>
 		</div>
 	);
 }
