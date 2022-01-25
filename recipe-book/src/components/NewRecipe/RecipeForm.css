@@ -1,0 +1,15 @@
+.new-recipe__controls input[type=text] {
+    width: 100%;
+    border-radius: 10px;
+    height: 25px;
+}
+
+.new-recipe__controls textarea {
+    width: 100%;
+    border-radius: 10px;
+    height: 60px;
+}
+
+.new-recipe__control {
+    margin: 6px;
+}

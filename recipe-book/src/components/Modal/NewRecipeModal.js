@@ -2,6 +2,8 @@ import React from "react";
 import "./NewRecipeModal.css";
 
 const NewRecipeModal = ({ show, close, children }) => {
+	
+
 	return (
 		<>
 			{show ? (

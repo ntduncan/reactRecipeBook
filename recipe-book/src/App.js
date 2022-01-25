@@ -94,6 +94,27 @@ function App() {
 	const [newRecipeModal, setNewRecipeModal] = useState(false);
 	const ToggleRecipeModal = () => setNewRecipeModal(!newRecipeModal);
 
+	// add new recipe into the list of recipes
+	const saveNewRecipeDataHandler = ({title, servings, ingredients, instructions, meal_type}) => {
+		// define a new arry to store all the ingredients
+		const ingredients_array = [];
+		// first, split all the ingredients by comma
+		const splitted_ingredients = ingredients.split(",");
+		// second, trim off all the white space before and after the single ingredient and push it into the new array
+		splitted_ingredients.forEach(ingredient => {
+			ingredients_array.push(ingredient.trim())
+		});
+
+		// trim off the white space before and after instructions
+		instructions = instructions.trim();
+
+		const newRecipeData = {id: Math.random().toString(), title: title, servings: servings, ingredients: ingredients_array, instructions: instructions, meal_type: meal_type}
+		// console.log(newRecipeData);
+
+		// last step, push the organized new recipe data into the recipe list
+		recipes.push(newRecipeData);
+	}
+
 	return (
 		<div>
 			<button className="clickme" onClick={() => Toggle()}>My Modal Popup</button>
@@ -103,7 +124,7 @@ function App() {
 			</Modal>
 
 			<NewRecipeModal show={newRecipeModal} close={ToggleRecipeModal}>
-				<RecipeForm></RecipeForm>
+				<RecipeForm onSaveNewRecipeData={saveNewRecipeDataHandler}></RecipeForm>
 			</NewRecipeModal>
 
 			<Recipes recipes={recipes} show={modal} setRecipe={setRecipe} setModal={setModal} typeFilter={navSelection.toLowerCase()}></Recipes>

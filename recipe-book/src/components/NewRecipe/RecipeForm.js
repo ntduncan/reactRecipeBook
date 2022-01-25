@@ -23,9 +23,11 @@ const RecipeForm = (props) => {
 		setEnteredInstructions(event.target.value);
 	};
 
-    const [enteredMealType, setEnteredMealType] = useState("");
+    const allSelectedMealTypes = []; 
+    const [selectedMealType, setSelectedMealType] = useState("");
 	const mealTypeChangeHandler = (event) => {
-		setEnteredMealType(event.target.value);
+        allSelectedMealTypes.push(event.target.value);
+		// setSelectedMealType(allSelectedMealTypes);
 	};
 
 	const submitHandler = (event) => {
@@ -38,27 +40,27 @@ const RecipeForm = (props) => {
 			servings: enteredServings,
 			ingredients: enteredIngredients,
             instructions: enteredInstructions,
-            meal_type: enteredMealType,
+            meal_type: allSelectedMealTypes,
 		};
 
-        console.log(recipeData);
+        // console.log(recipeData);
 
 		// we need to pass this up to parent
-		props.onSaveRecipeData(recipeData);
+		props.onSaveNewRecipeData(recipeData);
 
 		// set all the values back to empty after submitting the form
 		setEnteredTitle("");
 		SetEnteredServings("");
 		setEnteredIngredients("");
         setEnteredInstructions("");
-        setEnteredMealType("");
+        setSelectedMealType("");
 	};
 
 	return (
 		<form onSubmit={submitHandler}>
 			<div className="new-recipe__controls">
 				<div className="new-recipe__control">
-					<label>Title</label>
+					<label>Title</label><br/>
 					<input
 						type="text"
 						value={enteredTitle}
@@ -66,7 +68,7 @@ const RecipeForm = (props) => {
 					/>
 				</div>
 				<div className="new-recipe__control">
-					<label>Servings</label>
+					<label>Servings</label><br/>
 					<input
 						type="text"
 						value={enteredServings}
@@ -74,31 +76,57 @@ const RecipeForm = (props) => {
 					/>
 				</div>
 				<div className="new-recipe__control">
-					<label>Ingredients</label>
-					<input
-						type="text"
+					<label>Ingredients</label><br/>
+					<textarea
+                        placeholder="seperate by comma"
 						value={enteredIngredients}
 						onChange={ingredientsChangeHandler}
 					/>
 				</div>
                 <div className="new-recipe__control">
-					<label>Instructions</label>
-					<input
-						type="text"
+					<label>Instructions</label><br/>
+					<textarea
 						value={enteredInstructions}
 						onChange={instructionsChangeHandler}
 					/>
 				</div>
-                {/* meal type will be a drop down list */}
+                {/* meal type will be a checkbox */}
                 <div className="new-recipe__control">
-					<label>Meal Type</label>
+					<label>Meal Type</label><br/>
 					<input
-						type="text"
-						value={enteredMealType}
+						type="checkbox"
+						value="breakfast"
+                        id="breakfast"
+                        name="breakfast"
 						onChange={mealTypeChangeHandler}
 					/>
+                    <label for="breakfast">Breakfast</label><br/>
+                    <input
+						type="checkbox"
+						value="lunch"
+                        id="lunch"
+                        name="lunch"
+						onChange={mealTypeChangeHandler}
+					/>
+                    <label for="lunch">Lunch</label><br/>
+                    <input
+						type="checkbox"
+						value="dinner"
+                        id="dinner"
+                        name="dinner"
+						onChange={mealTypeChangeHandler}
+					/>
+                    <label for="dinner">Dinner</label><br/>
+                    <input
+						type="checkbox"
+						value="dessert"
+                        id="dessert"
+                        name="dessert"
+						onChange={mealTypeChangeHandler}
+					/>
+                    <label for="dessert">Dessert</label><br/>
 				</div>
-			</div>
+			</div><br/>
 			<div className="new-recipe__actions">
 				{/* <button type="button" onClick={props.onHideForm}>
 					Cancel
