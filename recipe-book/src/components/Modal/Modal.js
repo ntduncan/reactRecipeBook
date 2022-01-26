@@ -11,7 +11,6 @@ const Modal = ({ show, close, children }) => {
 							<button className="modal-close" onClick={() => close()}>
 								<FaWindowClose size={42}/>
 							</button>
-							{/* <h2 className="modal_header-title"></h2> */}
 						</header>
 						<main className="modal_content">{children}</main>
 						<footer className="modal_footer"></footer>
