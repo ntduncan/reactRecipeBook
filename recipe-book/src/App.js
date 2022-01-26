@@ -121,6 +121,7 @@ function App() {
     ingredients,
     instructions,
     meal_type,
+    description
   }) => {
     // define a new arry to store all the ingredients
     const ingredients_array = [];
@@ -141,6 +142,8 @@ function App() {
       ingredients: ingredients_array,
       instructions: instructions,
       meal_type: meal_type,
+      image: "https://www.pexels.com/photo/1640777/download/",
+      description: description,
     };
     // console.log(newRecipeData);
 
