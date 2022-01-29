@@ -56,7 +56,7 @@ const RecipeForm = ({ onSaveNewRecipeData, closeModal, setNavSelection }) => {
 		SetEnteredServings("");
 		setEnteredIngredients("");
 		setEnteredInstructions("");
-		setSelectedMealType("");
+		// setSelectedMealType("");
 		setEnteredDescription("");
 
 		// close the modal

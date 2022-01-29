@@ -13,7 +13,7 @@ const Recipes = ({ recipes, show, setRecipe, setModal, typeFilter }) => {
 				 <div className={styles.recipes}>
 					{recipes.map((recipe) => {
 						if(typeFilter === 'recipe book' || typeFilter === 'all' || recipe.meal_type.includes(typeFilter)) return createRecipeItem(recipe);
-						else return;
+						return "";
 					})}
 
 				</div>
