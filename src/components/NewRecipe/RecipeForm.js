@@ -23,6 +23,11 @@ const RecipeForm = ({ onSaveNewRecipeData, closeModal, setNavSelection }) => {
 		setEnteredInstructions(event.target.value);
 	};
 
+	const [enteredDescription, setEnteredDescription] = useState("");
+	const descriptionChangeHandler = (event) => {
+		setEnteredDescription(event.target.value);
+	};
+
 	const allSelectedMealTypes = [];
 	const [selectedMealType, setSelectedMealType] = useState("");
 	const mealTypeChangeHandler = (event) => {
@@ -40,6 +45,7 @@ const RecipeForm = ({ onSaveNewRecipeData, closeModal, setNavSelection }) => {
 			ingredients: enteredIngredients,
 			instructions: enteredInstructions,
 			meal_type: allSelectedMealTypes,
+			description: enteredDescription
 		};
 
 		// we need to pass this up to parent
@@ -51,6 +57,7 @@ const RecipeForm = ({ onSaveNewRecipeData, closeModal, setNavSelection }) => {
 		setEnteredIngredients("");
 		setEnteredInstructions("");
 		setSelectedMealType("");
+		setEnteredDescription("");
 
 		// close the modal
 		closeModal();
@@ -86,6 +93,15 @@ const RecipeForm = ({ onSaveNewRecipeData, closeModal, setNavSelection }) => {
 						type="text"
 						value={enteredServings}
 						onChange={servingsChangeHandler}
+						required
+					/>
+				</div>
+				<div className="new-recipe__control">
+					<label>Description</label>
+					<br />
+					<textarea
+						value={enteredDescription}
+						onChange={descriptionChangeHandler}
 						required
 					/>
 				</div>
