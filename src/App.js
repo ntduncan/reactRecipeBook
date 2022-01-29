@@ -6,6 +6,7 @@ import { useState } from "react";
 import RecipeDetail from "./components/Recipes/RecipeDetail";
 import NewRecipeModal from "./components/Modal/NewRecipeModal";
 import RecipeForm from "./components/NewRecipe/RecipeForm";
+import axios from 'axios';
 
 // dummy data
 const recipes = [
