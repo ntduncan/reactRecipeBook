@@ -1,4 +1,3 @@
-import style from "./App.module.css";
 import NavBar from "./components/NavBar/NavBar";
 import Recipes from "./components/Recipes/Recipes";
 import Modal from "./components/Modal/Modal";
@@ -6,7 +5,6 @@ import { useState } from "react";
 import RecipeDetail from "./components/Recipes/RecipeDetail";
 import NewRecipeModal from "./components/Modal/NewRecipeModal";
 import RecipeForm from "./components/NewRecipe/RecipeForm";
-import axios from 'axios';
 
 // dummy data
 const recipes = [

@@ -29,7 +29,7 @@ const RecipeForm = ({ onSaveNewRecipeData, closeModal, setNavSelection }) => {
 	};
 
 	const allSelectedMealTypes = [];
-	const [selectedMealType, setSelectedMealType] = useState("");
+	// const [selectedMealType, setSelectedMealType] = useState("");
 	const mealTypeChangeHandler = (event) => {
 		allSelectedMealTypes.push(event.target.value);
 	};

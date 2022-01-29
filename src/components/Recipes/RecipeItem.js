@@ -13,6 +13,8 @@ const RecipeItem = ({ recipe, setRecipe, setModal, typeFilter }) => {
         return "#FF847C";
       case "dessert":
         return "#E84A5F";
+      default:
+        return "";
     }
   };
 
